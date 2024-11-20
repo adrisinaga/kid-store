@@ -15,7 +15,7 @@ export default async function SetupLayout({
   const store = await db.store.findFirst({
     where: {
       userId,
-    },
+    }
   });
 
   if (store) {
