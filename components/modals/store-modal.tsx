@@ -19,14 +19,12 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { redirect, useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(1),
 });
 
 export const StoreModal = () => {
-  
   const [loading, setLoading] = useState(false);
 
   const storeModal = useStoreModal();
@@ -47,8 +45,7 @@ export const StoreModal = () => {
 
       console.log(response.data);
       toast.success("Berhasil membuat Toko");
-      window.location.assign(`/${response.data.id}`)
-      
+      window.location.assign(`/${response.data.id}`);
     } catch (error) {
       toast.error("Gagal membuat Toko");
     } finally {
